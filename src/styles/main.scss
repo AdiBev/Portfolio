@@ -1,0 +1,23 @@
+//common styles here
+
+@import "_navbar";
+@import "_reset";
+
+body {
+  background-color: #e387ff;
+
+  //adding a var to update partials on the save
+  width:$var;
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+
+    main {
+      grid-column: 1 / span 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(200px, auto);
+    }
+  }
+}
