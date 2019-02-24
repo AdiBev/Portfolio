@@ -9,7 +9,7 @@ export const LangsTools = () => {
           <li>HTML5</li>
           <li>CSS3 &#8594; Sass, Bootstrap</li>
           <li>Javascript &#8594; ES6, React, Jquery</li>
-          <li>React &#8594; Redux, Material-UI, styled components</li>
+          <li>React &#8594; Redux, MaterialUI, styled components</li>
         </ul>
       </div>
 

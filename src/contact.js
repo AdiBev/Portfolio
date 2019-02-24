@@ -8,16 +8,11 @@ export const Contact = () => {
   return (
     <div className="contact_container">
       <p>
-        Github{" "}
+        <a href="https://github.com/AdiBev" target="_blank" rel="noopener">
+          Github
+        </a>{" "}
         <span className="contact-icons">
           <FontAwesomeIcon icon={faGithub} size="1x" />
-        </span>
-      </p>
-
-      <p>
-        Linkedin{" "}
-        <span className="contact-icons">
-          <FontAwesomeIcon icon={faLinkedin} size="1x" />
         </span>
       </p>
 
