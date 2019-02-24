@@ -1,0 +1,123 @@
+//main:main.scss
+$var: 100%;
+
+//WeatherSense font
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+
+//YumRecipes font
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Libre+Baskerville|Pacifico");
+
+%buttonStyles {
+  background-color: #78a9f2;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+boxShadowStyles {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.portfolio_container {
+  grid-column: 1 / 4;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 950px;
+  margin: auto;
+
+  .WeatherSense {
+    a h2 {
+      font-family: "Cinzel", serif;
+      color: #ffd601;
+      font-weight: bold;
+    }
+  }
+
+  .YumRecipes {
+    a h2 {
+      font-family: "Pacifico", cursive;
+      color: #041342;
+    }
+  }
+
+  .React-boilerplate {
+    margin-top: 0px !important;
+  }
+
+  .portfolio_item {
+    margin: auto;
+    margin-bottom: 30px;
+    background: #009a78ad;
+    max-width: 370px;
+    min-height: 350px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    @extend boxShadowStyles;
+
+    .proj_header {
+      grid-column: 1 / 4;
+      place-self: center;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+      }
+
+      span {
+        margin-left: 20px;
+        font-size: 20px;
+      }
+    }
+
+    .proj_desc {
+      grid-column: 1 / 4;
+
+      p {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+    }
+
+    .github_link,
+    .app_link {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+      grid-column: 1 / 4;
+      place-self: center;
+      a {
+        @extend %buttonStyles;
+        background-color: #6cf367bd;
+        font-weight: bold;
+        font-size: 2rem;
+
+        &:hover {
+          background-color: #4cff45ed;
+          -webkit-animation: shadow-inset-center 0.4s
+            cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: shadow-inset-center 0.4s
+            cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+      }
+    }
+  }
+}
+
+//media query here
+@media only screen and (max-width: 750px) {
+  .portfolio_item .proj_desc p {
+    line-height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .portfolio_container .portfolio_item {
+    width: 90%;
+  }
+}

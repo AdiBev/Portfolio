@@ -1,23 +1,92 @@
 //common styles here
 
-@import "_navbar";
+//font for body
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+//font for headings
+@import url("https://fonts.googleapis.com/css?family=Crete+Round");
+
 @import "_reset";
+@import "_navbar";
+@import "_header";
+@import "_aboutpage";
+@import "_portfolio";
 
-body {
-  background-color: #e387ff;
+@mixin fontsize($size) {
+  font-size: $size * 1px;
+  font-size: $size * 0.1rem;
+}
 
-  //adding a var to update partials on the save
-  width:$var;
-  .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+%fontFamily {
+  font-family: "Crete Round", serif;
+  font-weight: normal;
+}
 
-    main {
-      grid-column: 1 / span 3;
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  body {
+    //adding a var to update partials on the save
+    width: $var;
+    background-color: #87ffc629;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 100%;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+
+    //fontsize styles here
+    h1 {
+      @include fontsize(40);
+      @extend %fontFamily;
+    }
+
+    h2 {
+      @include fontsize(30);
+      @extend %fontFamily;
+    }
+
+    p,
+    li,
+    a {
+      @include fontsize(25);
+    }
+
+    #app {
+      margin: auto;
+    }
+
+    .wrapper {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: minmax(200px, auto);
+      margin: auto;
+      width: 100%;
+
+      main {
+        grid-column: 1 / 4;
+        display: contents;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  html {
+    body {
+      h1 {
+        @include fontsize(30);
+      }
+
+      h2 {
+        @include fontsize(25);
+      }
+
+      p,
+      li,
+      a {
+        @include fontsize(20);
+      }
     }
   }
 }

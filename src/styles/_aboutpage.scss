@@ -1,0 +1,70 @@
+//main:main.scss
+$var: 100%;
+
+.about-page-wrapper {
+  grid-column: 1 / 4;
+  margin: auto;
+  width: 90%;
+
+
+  .about-page-content {
+    width: 80%;
+    line-height: 1.4;
+  }
+
+  .langstools_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    margin-bottom: 50px;
+
+    ul {
+      list-style-type: none;
+      li {
+        font-size: 22px;
+      }
+    }
+
+    ul li:before {
+      position: relative;
+      right: 10px;
+      content: "•";
+      font-size: 25px;
+      color: #01092782;
+    }
+
+    h2 {
+      margin-left: 20px;
+    }
+
+    .langs {
+      grid-column: 1 / 2;
+    }
+
+    .tools {
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .about-page-wrapper {
+    .langstools_container {
+      .langs {
+        grid-column: 1 / 4;
+      }
+
+      .tools {
+        grid-column: 1 / 4;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .about-page-wrapper {
+    .about-page-content {
+      width: 100%;
+    }
+  }
+}
